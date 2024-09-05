@@ -127,8 +127,40 @@ public class Main {
         arrayUtils.printArray(bubArray); // Print sorted array
 
         // Task 9
+        // Create an instance of AnagramChecker
+        AnagramCheck anagramCheck = new AnagramCheck();
 
+        // Read first string from user
+        System.out.print("Enter the first string: ");
+        String str1 = scanner.nextLine();
 
+        // Read second string from user
+        System.out.print("Enter the second string: ");
+        String str2 = scanner.nextLine();
+
+        // Check if the strings are anagrams and print the result
+        boolean result = anagramCheck.anagrams(str1, str2);
+        System.out.println("Are \"" + str1 + "\" and \"" + str2 + "\" anagrams? " + result);
+
+        // Task 10
+        // Read the array size
+        System.out.print("Enter the number of elements in the array: ");
+        int nSSF = scanner.nextInt();
+        int[] arr = new int[nSSF];
+
+        // Read the elements of the array
+        System.out.println("Enter " + nSSF + " integers:");
+        for (int i = 0; i < nSSF; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        try {
+            // Find the second smallest element
+            int resultSSF = SecondSmallestFinder.findSecondSmallest(arr);
+            System.out.println("The second smallest element is: " + resultSSF);
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
         // Close the Scanner
         scanner.close();
     }

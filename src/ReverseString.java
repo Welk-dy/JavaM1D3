@@ -2,7 +2,11 @@ public class ReverseString {
 
     // Method to manually reverse a string
     public static String reverseString(String str) {
-        char[] charArray = str.toCharArray(); // Convert the string to a character array
+        // Convert the input string to lowercase
+        str = str.toLowerCase();
+
+        // Convert the string to a character array
+        char[] charArray = str.toCharArray();
         int left = 0;
         int right = charArray.length - 1;
 
@@ -17,6 +21,15 @@ public class ReverseString {
         }
 
         // Convert the character array back to a string
-        return new String(charArray);
+        String reversed = new String(charArray);
+
+        // Capitalize the first letter of each word
+        String[] words = reversed.split(" ");
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() > 0) {
+                words[i] = Character.toUpperCase(words[i].charAt(0)) + words[i].substring(1);
+            }
+        }
+        return String.join(" ", words);
     }
 }
