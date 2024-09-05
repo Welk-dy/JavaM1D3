@@ -23,13 +23,13 @@ public class Main {
 
         // Print the pResult
         if (pResult) {
-            System.out.println("The Number " + num + " is a prime number.");
+            System.out.println("The number " + num + " is a prime number.");
         } else {
             System.out.println("The number " + num + " is not a prime number.");
         }
 
         // Task 3
-        System.out.print("Enter space-separated integers (e.g., 1 2 3 4 5) = ");
+        System.out.print("Enter space-separated numbers (e.g., 1 2 3 4 5) = ");
         scanner.nextLine();
         String aInput = scanner.nextLine();
         // Split the input string into an array of strings
@@ -101,7 +101,7 @@ public class Main {
         }
 
         // Task 7
-        System.out.print("Enter a string to count the number of vowels:");
+        System.out.print("Enter a string to count the number of vowels = ");
         scanner.nextLine();
         String vInput = scanner.nextLine();
 
@@ -112,6 +112,21 @@ public class Main {
         System.out.println("Number of vowels: " + numV);
 
         // Task 8
+        int[] bubArray = {64, 34, 25, 12, 22, 11, 90}; // Input array
+
+        // Create instances of BubbleSort and ArrayUtils
+        BubbleSort bubbleSort = new BubbleSort();
+        PrintArray arrayUtils = new PrintArray();
+
+        System.out.println("Original array:");
+        arrayUtils.printArray(bubArray); // Print original array
+
+        bubbleSort.sort(bubArray); // Sort the array
+
+        System.out.println("Sorted array:");
+        arrayUtils.printArray(bubArray); // Print sorted array
+
+        // Task 9
 
 
         // Close the Scanner
